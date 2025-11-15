@@ -15,7 +15,7 @@ Este projeto tem como objetivo desenvolver um sistema de gestão de consumo de e
 - **Flutter SDK 3.27.4**: [Instalar Flutter](https://docs.flutter.dev/get-started/install)
 - **Node.js e npm 22.17**: [Instalar Node.js 18.20.4](https://nodejs.org/pt/blog/release/v18.20.4)
 - **MySQL**: [Instalar MySQL](https://dev.mysql.com/downloads/installer/)
-- **JAVA 17** [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) 
+- **JAVA 17** [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
 ---
 
@@ -24,7 +24,7 @@ Este projeto tem como objetivo desenvolver um sistema de gestão de consumo de e
 ### 1. **Clone o repositório**
 
 ```bash
-   git clone https://github.com/arielsardinha/registro_de_energia.git
+   git clone https://github.com/mrfrigerio/registra-energia.git
 ```
 
 ### 2. **Crie o banco de dados no MySQL Workbench**
@@ -34,30 +34,36 @@ Se você tiver dificuldades para instalar e configurar o MySQL, siga este passo 
 #### **Passos para criar o banco e configurar o projeto:**
 
 1. **Abra o MySQL Workbench**.
+
    - Certifique-se de que o serviço MySQL está rodando corretamente.
 
 2. **Utilize o script SQL do repositório para gerar as tabelas e o usuário padrão**:
+
    - Abra o MySQL Workbench.
    - No menu superior, clique em **File > Open SQL Script...** e selecione o script SQL disponível no repositório.
 
    ![Abrindo script](https://github.com/user-attachments/assets/c9d2b559-e728-4930-a6ac-2a1bd13292b3)
 
 3. **Carregue o script no Workbench**:
+
    - Com o script carregado, revise as instruções SQL para garantir que tudo está correto.
 
    ![Selecionando script](https://github.com/user-attachments/assets/4d3fcc4d-d1b8-475e-90b2-b58bfc61ec8f)
 
 4. **Execute o script**:
+
    - Clique no botão de **Executar** (ícone de raio) ou pressione **Ctrl + Enter** para rodar o script e criar as tabelas e o usuário padrão.
 
    ![Executando script](https://github.com/user-attachments/assets/2da67832-1186-4bdc-9d73-834e1f49418a)
 
 5. **Atualize o schema para verificar as tabelas criadas**:
+
    - No painel esquerdo, clique com o **botão direito** sobre o banco de dados e selecione **Refresh All** para atualizar a visualização.
 
    ![Atualizando schema](https://github.com/user-attachments/assets/ab3322df-9c3f-4b90-bc65-19ce50c064f7)
 
 6. **Verifique o usuário admin**:
+
    - Agora, você deve ter um **usuário admin** registrado na tabela, pronto para ser utilizado nos testes e na aplicação.
 
    ![Usuário admin](https://github.com/user-attachments/assets/bb11c043-d033-4685-8de7-6d75798708d8)
@@ -86,16 +92,16 @@ Crie um arquivo chamado `env` na raiz do projeto com as seguintes configuraçõe
 
 Além disso, você encontrará configurações opcionais para salvar imagens na AWS S3. Caso não configure esses campos, o sistema continuará funcional, mas sem suporte para upload de imagens.
 
-PORT=3000  
-MY_SQL_HOST="localhost"  
-MY_SQL_PORT="3306"  
-MY_SQL_USER="root"  
-MY_SQL_PASSWORD=""  
-MY_SQL_DATABASE="my_light_app"  
-AWS_BUCKET=  
-AWS_REGION=  
-AWS_ACCESS_KEY_ID=  
-AWS_SECRET_ACCESS_KEY=  
+PORT=3000
+MY_SQL_HOST="localhost"
+MY_SQL_PORT="3306"
+MY_SQL_USER="root"
+MY_SQL_PASSWORD=""
+MY_SQL_DATABASE="my_light_app"
+AWS_BUCKET=
+AWS_REGION=
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
 
 > **Nota:** Se a porta 3000 estiver em uso, você pode alterá-la no arquivo `prod.env` modificando o valor da variável PORT.
 
@@ -110,15 +116,15 @@ npm run start
 
 #### 4. **Acesse a API**
 
-A API estará disponível no endereço:  
-<http://localhost:3000>  
+A API estará disponível no endereço:
+<http://localhost:3000>
 
 Caso a porta 3000 esteja ocupada, altere o valor no arquivo `prod.env`.
 
 #### 5. **Testando a API**
 
-Verifique se tudo está funcionando corretamente acessando a seguinte URI no navegador:  
-<http://localhost:3000/casas>  
+Verifique se tudo está funcionando corretamente acessando a seguinte URI no navegador:
+<http://localhost:3000/casas>
 
 Isso irá listar os registros de "casas" disponíveis para logar no sistema, como a casa padrão.
 
@@ -126,7 +132,7 @@ Isso irá listar os registros de "casas" disponíveis para logar no sistema, com
 
 ### 4. **Rodar o projeto front-end Flutter**
 
-Caso tenha dificuldades de configurar o ambiente para rodar o Flutter, acompanhe este vídeo:  
+Caso tenha dificuldades de configurar o ambiente para rodar o Flutter, acompanhe este vídeo:
 [Como configurar ambiente Flutter](https://www.youtube.com/watch?v=42jiTBFmeIA)
 
 #### 1. **Instale as dependências**
@@ -159,10 +165,10 @@ Durante a execução, o sistema pedirá que você informe o **domínio da API**.
 
 ![Selecionando Domínio da API](https://github.com/user-attachments/assets/283cec70-efea-4237-91dd-2e658fb204f9)
 
-- **Emulador Android**: Caso a API esteja rodando localmente, utilize:  
+- **Emulador Android**: Caso a API esteja rodando localmente, utilize:
   <http://10.0.2.2:3000>
 
-- **Dispositivo Físico ou emulador iOS**: Utilize:  
+- **Dispositivo Físico ou emulador iOS**: Utilize:
   <http://localhost:3000>
 
 > **Nota**: Certifique-se de que a API está rodando na porta correta. Verifique a porta em uso.
